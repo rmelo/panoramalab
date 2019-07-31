@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B247D685CC487F1E507A7432 /* libPods-PanoramaLab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C5004D98E7E4EF423CC6A4 /* libPods-PanoramaLab.a */; };
+		E5417E6122F014B100834EF3 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5417E6022F014B100834EF3 /* PreviewView.swift */; };
+		E5417E6A22F01A3700834EF3 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = E5417E6922F01A3700834EF3 /* OpenCVWrapper.mm */; };
+		E5B3F9F622EF3DE300E73559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3F9F522EF3DE300E73559 /* AppDelegate.swift */; };
+		E5B3F9F822EF3DE300E73559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3F9F722EF3DE300E73559 /* ViewController.swift */; };
+		E5B3F9FB22EF3DE300E73559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B3F9F922EF3DE300E73559 /* Main.storyboard */; };
+		E5B3F9FD22EF3DE400E73559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B3F9FC22EF3DE400E73559 /* Assets.xcassets */; };
+		E5B3FA0022EF3DE400E73559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B3F9FE22EF3DE400E73559 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04D76A3E04D3ED323348ABDA /* Pods-PanoramaLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanoramaLab.debug.xcconfig"; path = "Target Support Files/Pods-PanoramaLab/Pods-PanoramaLab.debug.xcconfig"; sourceTree = "<group>"; };
+		42C5004D98E7E4EF423CC6A4 /* libPods-PanoramaLab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PanoramaLab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5417E6022F014B100834EF3 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		E5417E6722F01A3700834EF3 /* PanoramaLab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PanoramaLab-Bridging-Header.h"; sourceTree = "<group>"; };
+		E5417E6822F01A3700834EF3 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		E5417E6922F01A3700834EF3 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		E5B3F9F222EF3DE300E73559 /* PanoramaLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanoramaLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B3F9F522EF3DE300E73559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5B3F9F722EF3DE300E73559 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5B3F9FA22EF3DE300E73559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5B3F9FC22EF3DE400E73559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5B3F9FF22EF3DE400E73559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5B3FA0122EF3DE400E73559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F044B4D51C50583AF94BC41E /* Pods-PanoramaLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanoramaLab.release.xcconfig"; path = "Target Support Files/Pods-PanoramaLab/Pods-PanoramaLab.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5B3F9EF22EF3DE300E73559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B247D685CC487F1E507A7432 /* libPods-PanoramaLab.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54F2BB47F5D0C43179C36470 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04D76A3E04D3ED323348ABDA /* Pods-PanoramaLab.debug.xcconfig */,
+				F044B4D51C50583AF94BC41E /* Pods-PanoramaLab.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E5417E6222F0198F00834EF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42C5004D98E7E4EF423CC6A4 /* libPods-PanoramaLab.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5B3F9E922EF3DE300E73559 = {
+			isa = PBXGroup;
+			children = (
+				E5417E6822F01A3700834EF3 /* OpenCVWrapper.h */,
+				E5417E6922F01A3700834EF3 /* OpenCVWrapper.mm */,
+				E5B3F9F422EF3DE300E73559 /* PanoramaLab */,
+				E5B3F9F322EF3DE300E73559 /* Products */,
+				E5417E6222F0198F00834EF3 /* Frameworks */,
+				E5417E6722F01A3700834EF3 /* PanoramaLab-Bridging-Header.h */,
+				54F2BB47F5D0C43179C36470 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E5B3F9F322EF3DE300E73559 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5B3F9F222EF3DE300E73559 /* PanoramaLab.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5B3F9F422EF3DE300E73559 /* PanoramaLab */ = {
+			isa = PBXGroup;
+			children = (
+				E5B3F9F522EF3DE300E73559 /* AppDelegate.swift */,
+				E5B3F9F722EF3DE300E73559 /* ViewController.swift */,
+				E5B3F9F922EF3DE300E73559 /* Main.storyboard */,
+				E5B3F9FC22EF3DE400E73559 /* Assets.xcassets */,
+				E5B3F9FE22EF3DE400E73559 /* LaunchScreen.storyboard */,
+				E5B3FA0122EF3DE400E73559 /* Info.plist */,
+				E5417E6022F014B100834EF3 /* PreviewView.swift */,
+			);
+			path = PanoramaLab;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5B3F9F122EF3DE300E73559 /* PanoramaLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5B3FA0422EF3DE400E73559 /* Build configuration list for PBXNativeTarget "PanoramaLab" */;
+			buildPhases = (
+				D24701D19ECF7CFA4A0D15EB /* [CP] Check Pods Manifest.lock */,
+				E5B3F9EE22EF3DE300E73559 /* Sources */,
+				E5B3F9EF22EF3DE300E73559 /* Frameworks */,
+				E5B3F9F022EF3DE300E73559 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PanoramaLab;
+			productName = PanoramaLab;
+			productReference = E5B3F9F222EF3DE300E73559 /* PanoramaLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5B3F9EA22EF3DE300E73559 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Rodrigo Melo";
+				TargetAttributes = {
+					E5B3F9F122EF3DE300E73559 = {
+						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = E5B3F9ED22EF3DE300E73559 /* Build configuration list for PBXProject "PanoramaLab" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5B3F9E922EF3DE300E73559;
+			productRefGroup = E5B3F9F322EF3DE300E73559 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5B3F9F122EF3DE300E73559 /* PanoramaLab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5B3F9F022EF3DE300E73559 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B3FA0022EF3DE400E73559 /* LaunchScreen.storyboard in Resources */,
+				E5B3F9FD22EF3DE400E73559 /* Assets.xcassets in Resources */,
+				E5B3F9FB22EF3DE300E73559 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D24701D19ECF7CFA4A0D15EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PanoramaLab-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5B3F9EE22EF3DE300E73559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B3F9F822EF3DE300E73559 /* ViewController.swift in Sources */,
+				E5417E6A22F01A3700834EF3 /* OpenCVWrapper.mm in Sources */,
+				E5417E6122F014B100834EF3 /* PreviewView.swift in Sources */,
+				E5B3F9F622EF3DE300E73559 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E5B3F9F922EF3DE300E73559 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5B3F9FA22EF3DE300E73559 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E5B3F9FE22EF3DE400E73559 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5B3F9FF22EF3DE400E73559 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E5B3FA0222EF3DE400E73559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E5B3FA0322EF3DE400E73559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5B3FA0522EF3DE400E73559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04D76A3E04D3ED323348ABDA /* Pods-PanoramaLab.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HKDXN8L6GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PanoramaLab",
+				);
+				INFOPLIST_FILE = PanoramaLab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vertem.PanoramaLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PanoramaLab-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E5B3FA0622EF3DE400E73559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F044B4D51C50583AF94BC41E /* Pods-PanoramaLab.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HKDXN8L6GT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PanoramaLab",
+				);
+				INFOPLIST_FILE = PanoramaLab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vertem.PanoramaLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PanoramaLab-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5B3F9ED22EF3DE300E73559 /* Build configuration list for PBXProject "PanoramaLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5B3FA0222EF3DE400E73559 /* Debug */,
+				E5B3FA0322EF3DE400E73559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5B3FA0422EF3DE400E73559 /* Build configuration list for PBXNativeTarget "PanoramaLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5B3FA0522EF3DE400E73559 /* Debug */,
+				E5B3FA0622EF3DE400E73559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5B3F9EA22EF3DE300E73559 /* Project object */;
+}
