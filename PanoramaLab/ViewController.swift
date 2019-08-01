@@ -17,14 +17,23 @@ class ViewController: UIViewController{
     @IBOutlet weak var btnCaptureBack: UIButton!
     @IBOutlet weak var btnVideoCapture: UIButton!
     @IBOutlet weak var btnVideoCaptureBack: UIButton!
-    @IBOutlet weak var btnCaptureMode: UIButton!
-    
-    var videoQueueOutput: DispatchQueue!
+    @IBOutlet weak var btnCaptureMode: UISegmentedControl!
     
     var session: AVCaptureSession!
     var output: AVCaptureOutput!
-    
+    var videoDataOutputQueue: DispatchQueue!
     var lastPhoto: UIImage!
+    var isRecording: Bool! = false
+    var frameCount: Int! = 0
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        makeCircleButton(buttons: [btnCapture, btnCaptureBack, btnVideoCapture, btnVideoCaptureBack])
+        
+        self.setVideoSession()
+        self.startSession()
+    }
     
     func setupLivePreview() {
         self.previewView.videoPreviewLayer.session = self.session
@@ -73,8 +82,6 @@ class ViewController: UIViewController{
         
         self.setupLivePreview()
         
-        self.btnCaptureMode.setTitle("Video", for: .normal)
-        
         self.setIsHidden(buttons: [btnVideoCapture, btnVideoCaptureBack], isHidden: true)
         self.setIsHidden(buttons: [btnCapture, btnCaptureBack], isHidden: false)
     }
@@ -85,7 +92,14 @@ class ViewController: UIViewController{
         self.session.beginConfiguration()
         
         self.setDevice(session: self.session)
-        self.output = AVCaptureVideoDataOutput()
+        
+        self.videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")
+        
+        let output = AVCaptureVideoDataOutput()
+        output.alwaysDiscardsLateVideoFrames = true
+        output.setSampleBufferDelegate(self, queue: self.videoDataOutputQueue)
+        
+        self.output = output
         
         self.session.sessionPreset = .vga640x480
         self.session.addOutput(self.output)
@@ -93,13 +107,9 @@ class ViewController: UIViewController{
 
         self.setupLivePreview()
         
-        self.btnCaptureMode.setTitle("Photo", for: .normal)
-        
         self.setIsHidden(buttons: [btnVideoCapture, btnVideoCaptureBack], isHidden: false)
         self.setIsHidden(buttons: [btnCapture, btnCaptureBack], isHidden: true)
     }
-    
-    
     
     func changeMode(){
         
@@ -124,18 +134,10 @@ class ViewController: UIViewController{
         self.session.stopRunning()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        makeCircleButton(buttons: [btnCapture, btnCaptureBack, btnVideoCapture, btnVideoCaptureBack])
-        
-        self.setPhotoSession()
-        self.startSession()
-    }
-
-    @IBAction func onCaptureModeChange(_ sender: Any) {
+    @IBAction func onCaptureModeChange(_ sender: UISegmentedControl) {
         self.changeMode()
     }
+    
     
     @IBAction func onCaptureTouchUp(_ sender: UIButton) {
         
@@ -159,6 +161,17 @@ class ViewController: UIViewController{
         self.present(alert, animated: true);
         self.dismiss(animated: true, completion: nil);
     }
+    
+    @IBAction func onCaptureVideoBegin(_ sender: UIButton) {
+        self.isRecording = true
+        self.btnVideoCapture.alpha = 0
+    }
+    
+    @IBAction func onCaptureVideoEnd(_ sender: UIButton) {
+        self.isRecording = false
+        self.btnVideoCapture.alpha = 1
+    }
+    
 }
 
 extension ViewController: AVCapturePhotoCaptureDelegate{
@@ -189,6 +202,37 @@ extension ViewController: AVCapturePhotoCaptureDelegate{
             self.btnCaptureBack.isHidden = false;
         }
     }
+}
+
+extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
+     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+        if(self.isRecording){
+
+            self.frameCount+=1
+
+            print("got a frame %s", self.frameCount)
+
+            guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return  }
+            let ciImage = CIImage(cvPixelBuffer: imageBuffer)
+
+            let context = CIContext()
+            guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return  }
+
+            let image = UIImage(cgImage: cgImage)
+            
+            if self.lastPhoto != nil {
+                self.lastPhoto = OpenCVWrapper.stitch(self.lastPhoto, image)
+            }else{
+                self.lastPhoto = image
+            }
+            
+            DispatchQueue.main.async {
+                self.photoPreview.image = self.lastPhoto
+                self.photoPreview.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
+            }
+        }
+    }
 }
 

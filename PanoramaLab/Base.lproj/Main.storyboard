@@ -42,21 +42,6 @@
                                             <action selector="onSaveTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ixc-TH-X6v"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkx-1l-SYr">
-                                        <rect key="frame" x="8" y="8" width="148" height="338"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.99396301693384759" green="1" blue="0.93033309059161384" alpha="0.14805237676056338" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoJ-mG-FcO">
-                                        <rect key="frame" x="316" y="26" width="70" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Video">
-                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onCaptureModeChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oaz-0s-Is5"/>
-                                        </connections>
-                                    </button>
                                     <button alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFa-2v-kle">
                                         <rect key="frame" x="163" y="619" width="88" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,6 +61,10 @@
                                         <state key="normal">
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCaptureVideoBegin:" destination="BYZ-38-t0r" eventType="touchDown" id="APb-K7-tx4"/>
+                                            <action selector="onCaptureVideoEnd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ue2-EZ-Lrb"/>
+                                        </connections>
                                     </button>
                                     <button alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFk-L0-36v">
                                         <rect key="frame" x="163" y="619" width="88" height="88"/>
@@ -86,9 +75,6 @@
                                         <state key="normal">
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="onCaptureTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="650-n6-oS4"/>
-                                        </connections>
                                     </button>
                                     <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utS-n9-ltP">
                                         <rect key="frame" x="172" y="628" width="70" height="70"/>
@@ -103,6 +89,23 @@
                                             <action selector="onCaptureTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lMx-vX-bK5"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="COI-2s-oKa">
+                                        <rect key="frame" x="263" y="34" width="121" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Photo"/>
+                                            <segment title="Video"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.0" green="0.95523184539999995" blue="0.57838430939999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="onCaptureModeChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xvj-yP-Bwa"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkx-1l-SYr">
+                                        <rect key="frame" x="8" y="307" width="203" height="271"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.99396301693384759" green="1" blue="0.93033309059161384" alpha="0.071110255281690141" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
@@ -113,7 +116,7 @@
                     <connections>
                         <outlet property="btnCapture" destination="utS-n9-ltP" id="KuI-GR-n4x"/>
                         <outlet property="btnCaptureBack" destination="nFk-L0-36v" id="DxB-tr-gR7"/>
-                        <outlet property="btnCaptureMode" destination="xoJ-mG-FcO" id="dKn-ra-LQa"/>
+                        <outlet property="btnCaptureMode" destination="COI-2s-oKa" id="Vvr-lc-rsF"/>
                         <outlet property="btnVideoCapture" destination="KYh-Mc-Ydb" id="hzL-jp-9oc"/>
                         <outlet property="btnVideoCaptureBack" destination="BFa-2v-kle" id="qXQ-hL-h1q"/>
                         <outlet property="photoPreview" destination="dkx-1l-SYr" id="LcL-84-l4g"/>
