@@ -15,61 +15,134 @@ class ViewController: UIViewController{
     @IBOutlet weak var photoPreview: UIImageView!
     @IBOutlet weak var btnCapture: UIButton!
     @IBOutlet weak var btnCaptureBack: UIButton!
+    @IBOutlet weak var btnVideoCapture: UIButton!
+    @IBOutlet weak var btnVideoCaptureBack: UIButton!
+    @IBOutlet weak var btnCaptureMode: UIButton!
     
-    var captureSession: AVCaptureSession!
-    var photoOutput: AVCapturePhotoOutput!
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    var videoQueueOutput: DispatchQueue!
+    
+    var session: AVCaptureSession!
+    var output: AVCaptureOutput!
+    
     var lastPhoto: UIImage!
     
-    func setupLivePreview(preview: PreviewView, capture: AVCaptureSession) {
+    func setupLivePreview() {
+        self.previewView.videoPreviewLayer.session = self.session
+        self.previewView.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.previewView.videoPreviewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+        self.previewView.videoPreviewLayer.frame = self.previewView.bounds
+    }
+    
+    func makeCircleButton(buttons: [UIButton] ){
+        for button in buttons{
+            button.layer.cornerRadius = button.frame.width / 2
+        }
+    }
+    
+    func setIsHidden(buttons: [UIButton], isHidden: Bool){
+        for button in buttons {
+            button.isHidden = isHidden
+        }
+    }
+    
+    func setDevice(session: AVCaptureSession){
         
-        preview.videoPreviewLayer.session = capture
+        let videoDevice = AVCaptureDevice.default(for: .video)
         
-        preview.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        guard
+            let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice!),
+            session.canAddInput(videoDeviceInput)
+            else { return }
         
-        preview.videoPreviewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+        session.addInput(videoDeviceInput)
+    }
+    
+    func setPhotoSession(){
         
-        preview.videoPreviewLayer.frame = self.previewView.bounds
+        self.session = AVCaptureSession()
+        self.session.beginConfiguration()
+        
+        self.setDevice(session: self.session)
+        
+        self.output = AVCapturePhotoOutput()
+        guard self.session.canAddOutput(self.output) else { return }
+        
+        self.session.sessionPreset = .hd1920x1080
+        self.session.addOutput(self.output)
+        self.session.commitConfiguration()
+        
+        self.setupLivePreview()
+        
+        self.btnCaptureMode.setTitle("Video", for: .normal)
+        
+        self.setIsHidden(buttons: [btnVideoCapture, btnVideoCaptureBack], isHidden: true)
+        self.setIsHidden(buttons: [btnCapture, btnCaptureBack], isHidden: false)
+    }
+    
+    func setVideoSession(){
+        
+        self.session = AVCaptureSession()
+        self.session.beginConfiguration()
+        
+        self.setDevice(session: self.session)
+        self.output = AVCaptureVideoDataOutput()
+        
+        self.session.sessionPreset = .vga640x480
+        self.session.addOutput(self.output)
+        self.session.commitConfiguration()
+
+        self.setupLivePreview()
+        
+        self.btnCaptureMode.setTitle("Photo", for: .normal)
+        
+        self.setIsHidden(buttons: [btnVideoCapture, btnVideoCaptureBack], isHidden: false)
+        self.setIsHidden(buttons: [btnCapture, btnCaptureBack], isHidden: true)
+    }
+    
+    
+    
+    func changeMode(){
+        
+        self.stopSession()
+        
+        if(self.output is AVCapturePhotoOutput){
+            self.setVideoSession()
+        }else{
+            self.setPhotoSession()
+        }
+        
+        self.startSession()
+    }
+    
+    func startSession(){
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.session.startRunning()
+        }
+    }
+    
+    func stopSession(){
+        self.session.stopRunning()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.btnCapture.layer.cornerRadius = self.btnCapture.frame.width / 2
+        makeCircleButton(buttons: [btnCapture, btnCaptureBack, btnVideoCapture, btnVideoCaptureBack])
         
-        self.btnCaptureBack.layer.cornerRadius = self.btnCaptureBack.frame.width / 2
-        
-        captureSession = AVCaptureSession()
-        captureSession.beginConfiguration()
-        
-        let videoDevice = AVCaptureDevice.default(for: .video)
-        guard
-            let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice!),
-            captureSession.canAddInput(videoDeviceInput)
-            else { return }
-        captureSession.addInput(videoDeviceInput)
-        
-        photoOutput = AVCapturePhotoOutput()
-        guard captureSession.canAddOutput(photoOutput) else { return }
+        self.setPhotoSession()
+        self.startSession()
+    }
 
-        captureSession.sessionPreset = .hd1920x1080
-        captureSession.addOutput(photoOutput)
-        captureSession.commitConfiguration()
-        
-        self.setupLivePreview(preview: self.previewView, capture: self.captureSession)
-    
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.captureSession.startRunning()
-        }
-        
+    @IBAction func onCaptureModeChange(_ sender: Any) {
+        self.changeMode()
     }
     
     @IBAction func onCaptureTouchUp(_ sender: UIButton) {
         
         let settings = AVCapturePhotoSettings()
         settings.isAutoStillImageStabilizationEnabled = true;
-        
-        self.photoOutput.capturePhoto(with: settings, delegate: self)
+    
+        (self.output as? AVCapturePhotoOutput)?.capturePhoto(with: settings, delegate: self)
     }
     
     @IBAction func onCancelTouchUp(_ sender: UIButton) {
@@ -86,7 +159,6 @@ class ViewController: UIViewController{
         self.present(alert, animated: true);
         self.dismiss(animated: true, completion: nil);
     }
-    
 }
 
 extension ViewController: AVCapturePhotoCaptureDelegate{

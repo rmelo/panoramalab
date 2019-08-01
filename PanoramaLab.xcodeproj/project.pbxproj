@@ -10,6 +10,7 @@
 		B247D685CC487F1E507A7432 /* libPods-PanoramaLab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C5004D98E7E4EF423CC6A4 /* libPods-PanoramaLab.a */; };
 		E5417E6122F014B100834EF3 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5417E6022F014B100834EF3 /* PreviewView.swift */; };
 		E5417E6A22F01A3700834EF3 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = E5417E6922F01A3700834EF3 /* OpenCVWrapper.mm */; };
+		E541A4BD22F35E990042F626 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E541A4BC22F35E990042F626 /* VideoController.swift */; };
 		E5B3F9F622EF3DE300E73559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3F9F522EF3DE300E73559 /* AppDelegate.swift */; };
 		E5B3F9F822EF3DE300E73559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3F9F722EF3DE300E73559 /* ViewController.swift */; };
 		E5B3F9FB22EF3DE300E73559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B3F9F922EF3DE300E73559 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		E5417E6722F01A3700834EF3 /* PanoramaLab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PanoramaLab-Bridging-Header.h"; sourceTree = "<group>"; };
 		E5417E6822F01A3700834EF3 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		E5417E6922F01A3700834EF3 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		E541A4BC22F35E990042F626 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		E5B3F9F222EF3DE300E73559 /* PanoramaLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanoramaLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B3F9F522EF3DE300E73559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B3F9F722EF3DE300E73559 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +54,6 @@
 				04D76A3E04D3ED323348ABDA /* Pods-PanoramaLab.debug.xcconfig */,
 				F044B4D51C50583AF94BC41E /* Pods-PanoramaLab.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -95,6 +96,7 @@
 				E5B3F9FE22EF3DE400E73559 /* LaunchScreen.storyboard */,
 				E5B3FA0122EF3DE400E73559 /* Info.plist */,
 				E5417E6022F014B100834EF3 /* PreviewView.swift */,
+				E541A4BC22F35E990042F626 /* VideoController.swift */,
 			);
 			path = PanoramaLab;
 			sourceTree = "<group>";
@@ -197,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E541A4BD22F35E990042F626 /* VideoController.swift in Sources */,
 				E5B3F9F822EF3DE300E73559 /* ViewController.swift in Sources */,
 				E5417E6A22F01A3700834EF3 /* OpenCVWrapper.mm in Sources */,
 				E5417E6122F014B100834EF3 /* PreviewView.swift in Sources */,
