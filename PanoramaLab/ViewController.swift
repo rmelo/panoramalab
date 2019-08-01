@@ -78,6 +78,15 @@ class ViewController: UIViewController{
         self.photoPreview.image = nil;
         
     }
+    
+    @IBAction func onSaveTouchUp(_ sender: Any) {
+        
+        UIImageWriteToSavedPhotosAlbum(self.lastPhoto, nil, nil, nil);
+        let alert = UIAlertController(title: "Saved", message: "Image saved to camera roll.", preferredStyle: .alert);
+        self.present(alert, animated: true);
+        self.dismiss(animated: true, completion: nil);
+    }
+    
 }
 
 extension ViewController: AVCapturePhotoCaptureDelegate{

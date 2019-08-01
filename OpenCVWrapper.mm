@@ -62,6 +62,10 @@ using namespace std;
     
     cv::Stitcher::Mode mode = cv::Stitcher::PANORAMA;
     cv::Ptr<cv::Stitcher> stitcher = cv::Stitcher::create(mode);
+    cv::Ptr<cv::WarperCreator> creator = new cv::PlaneWarper();
+    
+    stitcher->setWaveCorrection(false);
+    stitcher->setWarper(creator);
     
     try {
     
@@ -78,7 +82,10 @@ using namespace std;
     
     cout << "Stitched!";
     
-    return MatToUIImage(pano);
+//    rotate(pano, pano, cv::ROTATE_90_COUNTERCLOCKWISE);
+    UIImage * panoImage = MatToUIImage(pano);
+    
+    return panoImage;
 }
 
 @end
