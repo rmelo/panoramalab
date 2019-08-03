@@ -101,11 +101,15 @@
                                             <action selector="onCaptureModeChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xvj-yP-Bwa"/>
                                         </connections>
                                     </segmentedControl>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkx-1l-SYr">
-                                        <rect key="frame" x="8" y="307" width="203" height="271"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkx-1l-SYr">
+                                        <rect key="frame" x="8" y="406" width="109" height="184"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99396301693384759" green="1" blue="0.93033309059161384" alpha="0.071110255281690141" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="emW-Tu-6zH">
+                                        <rect key="frame" x="38" y="34" width="185" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
@@ -119,6 +123,7 @@
                         <outlet property="btnCaptureMode" destination="COI-2s-oKa" id="Vvr-lc-rsF"/>
                         <outlet property="btnVideoCapture" destination="KYh-Mc-Ydb" id="hzL-jp-9oc"/>
                         <outlet property="btnVideoCaptureBack" destination="BFa-2v-kle" id="qXQ-hL-h1q"/>
+                        <outlet property="cannyThresholdSlider" destination="emW-Tu-6zH" id="yJs-fM-2jQ"/>
                         <outlet property="photoPreview" destination="dkx-1l-SYr" id="LcL-84-l4g"/>
                         <outlet property="previewView" destination="dfJ-3T-atf" id="oUw-UN-DFM"/>
                     </connections>

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B247D685CC487F1E507A7432 /* libPods-PanoramaLab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C5004D98E7E4EF423CC6A4 /* libPods-PanoramaLab.a */; };
+		0CBB54A6C200ED1100F6EFEA /* libPods-PanoramaLab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C44BF1625A1E97309BB305 /* libPods-PanoramaLab.a */; };
 		E5417E6122F014B100834EF3 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5417E6022F014B100834EF3 /* PreviewView.swift */; };
 		E5417E6A22F01A3700834EF3 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = E5417E6922F01A3700834EF3 /* OpenCVWrapper.mm */; };
 		E541A4BD22F35E990042F626 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E541A4BC22F35E990042F626 /* VideoController.swift */; };
+		E58B43E922F4AEB6008B13BC /* Cropping.mm in Sources */ = {isa = PBXBuildFile; fileRef = E58B43E822F4AEB6008B13BC /* Cropping.mm */; };
+		E58B43F222F4B6A6008B13BC /* OpenCVConversion.mm in Sources */ = {isa = PBXBuildFile; fileRef = E58B43F122F4B6A6008B13BC /* OpenCVConversion.mm */; };
 		E5B3F9F622EF3DE300E73559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3F9F522EF3DE300E73559 /* AppDelegate.swift */; };
 		E5B3F9F822EF3DE300E73559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B3F9F722EF3DE300E73559 /* ViewController.swift */; };
 		E5B3F9FB22EF3DE300E73559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B3F9F922EF3DE300E73559 /* Main.storyboard */; };
@@ -19,13 +21,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04D76A3E04D3ED323348ABDA /* Pods-PanoramaLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanoramaLab.debug.xcconfig"; path = "Target Support Files/Pods-PanoramaLab/Pods-PanoramaLab.debug.xcconfig"; sourceTree = "<group>"; };
-		42C5004D98E7E4EF423CC6A4 /* libPods-PanoramaLab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PanoramaLab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		116AD0A17D0F9995A5CC59FF /* Pods-PanoramaLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanoramaLab.debug.xcconfig"; path = "Target Support Files/Pods-PanoramaLab/Pods-PanoramaLab.debug.xcconfig"; sourceTree = "<group>"; };
+		B6C44BF1625A1E97309BB305 /* libPods-PanoramaLab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PanoramaLab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDF12E8E36872F0E63BFF824 /* Pods-PanoramaLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanoramaLab.release.xcconfig"; path = "Target Support Files/Pods-PanoramaLab/Pods-PanoramaLab.release.xcconfig"; sourceTree = "<group>"; };
 		E5417E6022F014B100834EF3 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		E5417E6722F01A3700834EF3 /* PanoramaLab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PanoramaLab-Bridging-Header.h"; sourceTree = "<group>"; };
 		E5417E6822F01A3700834EF3 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		E5417E6922F01A3700834EF3 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		E541A4BC22F35E990042F626 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		E58B43E722F4AE9D008B13BC /* Cropping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cropping.h; sourceTree = "<group>"; };
+		E58B43E822F4AEB6008B13BC /* Cropping.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Cropping.mm; sourceTree = "<group>"; };
+		E58B43F022F4B504008B13BC /* OpenCVConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVConversion.h; sourceTree = "<group>"; };
+		E58B43F122F4B6A6008B13BC /* OpenCVConversion.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVConversion.mm; sourceTree = "<group>"; };
 		E5B3F9F222EF3DE300E73559 /* PanoramaLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanoramaLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B3F9F522EF3DE300E73559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B3F9F722EF3DE300E73559 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +40,6 @@
 		E5B3F9FC22EF3DE400E73559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5B3F9FF22EF3DE400E73559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5B3FA0122EF3DE400E73559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F044B4D51C50583AF94BC41E /* Pods-PanoramaLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PanoramaLab.release.xcconfig"; path = "Target Support Files/Pods-PanoramaLab/Pods-PanoramaLab.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B247D685CC487F1E507A7432 /* libPods-PanoramaLab.a in Frameworks */,
+				0CBB54A6C200ED1100F6EFEA /* libPods-PanoramaLab.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,16 +57,16 @@
 		54F2BB47F5D0C43179C36470 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				04D76A3E04D3ED323348ABDA /* Pods-PanoramaLab.debug.xcconfig */,
-				F044B4D51C50583AF94BC41E /* Pods-PanoramaLab.release.xcconfig */,
+				116AD0A17D0F9995A5CC59FF /* Pods-PanoramaLab.debug.xcconfig */,
+				CDF12E8E36872F0E63BFF824 /* Pods-PanoramaLab.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E5417E6222F0198F00834EF3 /* Frameworks */ = {
+		A193D0104ADDAEE405FD3D1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				42C5004D98E7E4EF423CC6A4 /* libPods-PanoramaLab.a */,
+				B6C44BF1625A1E97309BB305 /* libPods-PanoramaLab.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -68,13 +74,17 @@
 		E5B3F9E922EF3DE300E73559 = {
 			isa = PBXGroup;
 			children = (
+				E58B43F122F4B6A6008B13BC /* OpenCVConversion.mm */,
+				E58B43F022F4B504008B13BC /* OpenCVConversion.h */,
+				E58B43E822F4AEB6008B13BC /* Cropping.mm */,
+				E58B43E722F4AE9D008B13BC /* Cropping.h */,
 				E5417E6822F01A3700834EF3 /* OpenCVWrapper.h */,
 				E5417E6922F01A3700834EF3 /* OpenCVWrapper.mm */,
 				E5B3F9F422EF3DE300E73559 /* PanoramaLab */,
 				E5B3F9F322EF3DE300E73559 /* Products */,
-				E5417E6222F0198F00834EF3 /* Frameworks */,
 				E5417E6722F01A3700834EF3 /* PanoramaLab-Bridging-Header.h */,
 				54F2BB47F5D0C43179C36470 /* Pods */,
+				A193D0104ADDAEE405FD3D1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +118,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5B3FA0422EF3DE400E73559 /* Build configuration list for PBXNativeTarget "PanoramaLab" */;
 			buildPhases = (
-				D24701D19ECF7CFA4A0D15EB /* [CP] Check Pods Manifest.lock */,
+				812FA2503A00715BC9E4BDD6 /* [CP] Check Pods Manifest.lock */,
 				E5B3F9EE22EF3DE300E73559 /* Sources */,
 				E5B3F9EF22EF3DE300E73559 /* Frameworks */,
 				E5B3F9F022EF3DE300E73559 /* Resources */,
@@ -170,7 +180,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D24701D19ECF7CFA4A0D15EB /* [CP] Check Pods Manifest.lock */ = {
+		812FA2503A00715BC9E4BDD6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,9 +211,11 @@
 			files = (
 				E541A4BD22F35E990042F626 /* VideoController.swift in Sources */,
 				E5B3F9F822EF3DE300E73559 /* ViewController.swift in Sources */,
+				E58B43F222F4B6A6008B13BC /* OpenCVConversion.mm in Sources */,
 				E5417E6A22F01A3700834EF3 /* OpenCVWrapper.mm in Sources */,
 				E5417E6122F014B100834EF3 /* PreviewView.swift in Sources */,
 				E5B3F9F622EF3DE300E73559 /* AppDelegate.swift in Sources */,
+				E58B43E922F4AEB6008B13BC /* Cropping.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +359,7 @@
 		};
 		E5B3FA0522EF3DE400E73559 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04D76A3E04D3ED323348ABDA /* Pods-PanoramaLab.debug.xcconfig */;
+			baseConfigurationReference = 116AD0A17D0F9995A5CC59FF /* Pods-PanoramaLab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -373,7 +385,7 @@
 		};
 		E5B3FA0622EF3DE400E73559 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F044B4D51C50583AF94BC41E /* Pods-PanoramaLab.release.xcconfig */;
+			baseConfigurationReference = CDF12E8E36872F0E63BFF824 /* Pods-PanoramaLab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

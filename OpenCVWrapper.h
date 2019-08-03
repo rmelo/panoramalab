@@ -14,6 +14,8 @@
 
 + (UIImage *) makeGrayscaleImage:(UIImage *) image;
 
++ (UIImage *) detectEdges:(UIImage *) image :(double) cannyThreshold;
+
 + (UIImage *) stitchImage:(UIImage *) leftImage :(UIImage *) rightImage;
 
 @end

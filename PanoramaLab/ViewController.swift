@@ -18,6 +18,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var btnVideoCapture: UIButton!
     @IBOutlet weak var btnVideoCaptureBack: UIButton!
     @IBOutlet weak var btnCaptureMode: UISegmentedControl!
+    @IBOutlet weak var cannyThresholdSlider: UISlider!
     
     var session: AVCaptureSession!
     var output: AVCaptureOutput!
@@ -28,11 +29,20 @@ class ViewController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
+        var croppedImageView = UIImageView()
+        var cropImageRect = CGRect()
+        var cropImageRectCorner = UIRectCorner()
+
+
         makeCircleButton(buttons: [btnCapture, btnCaptureBack, btnVideoCapture, btnVideoCaptureBack])
         
         self.setVideoSession()
         self.startSession()
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
     func setupLivePreview() {
@@ -101,7 +111,7 @@ class ViewController: UIViewController{
         
         self.output = output
         
-        self.session.sessionPreset = .vga640x480
+        self.session.sessionPreset = .hd1920x1080
         self.session.addOutput(self.output)
         self.session.commitConfiguration()
 
@@ -160,6 +170,8 @@ class ViewController: UIViewController{
         let alert = UIAlertController(title: "Saved", message: "Image saved to camera roll.", preferredStyle: .alert);
         self.present(alert, animated: true);
         self.dismiss(animated: true, completion: nil);
+        
+        UIApplication.shared.open(URL(string:"photos-redirect://")!)
     }
     
     @IBAction func onCaptureVideoBegin(_ sender: UIButton) {
@@ -171,7 +183,6 @@ class ViewController: UIViewController{
         self.isRecording = false
         self.btnVideoCapture.alpha = 1
     }
-    
 }
 
 extension ViewController: AVCapturePhotoCaptureDelegate{
@@ -189,6 +200,8 @@ extension ViewController: AVCapturePhotoCaptureDelegate{
             }
             
             let currentPhoto = UIImage(data: imageData)
+            
+//            self.lastPhoto = OpenCVWrapper.detectEdges(currentPhoto, Double(self.cannyThresholdSlider.value))
             
             if self.lastPhoto != nil {
                 self.lastPhoto = OpenCVWrapper.stitch(self.lastPhoto, currentPhoto)
@@ -212,8 +225,6 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
             self.frameCount+=1
 
-            print("got a frame %s", self.frameCount)
-
             guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return  }
             let ciImage = CIImage(cvPixelBuffer: imageBuffer)
 
@@ -221,6 +232,8 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return  }
 
             let image = UIImage(cgImage: cgImage)
+
+//            self.lastPhoto = OpenCVWrapper.detectEdges(image, Double(self.cannyThresholdSlider.value))
             
             if self.lastPhoto != nil {
                 self.lastPhoto = OpenCVWrapper.stitch(self.lastPhoto, image)
@@ -230,8 +243,8 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             
             DispatchQueue.main.async {
                 self.photoPreview.image = self.lastPhoto
-                self.photoPreview.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
             }
+            
         }
     }
 }

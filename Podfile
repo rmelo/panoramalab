@@ -6,6 +6,6 @@ target 'PanoramaLab' do
   # use_frameworks!
 
   # Pods for PanoramaLab
-  pod 'OpenCV'
+  pod 'OpenCV2-contrib'
 
 end
